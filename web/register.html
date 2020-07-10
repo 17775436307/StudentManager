@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*验证姓名和密码*/
+	function names() {
+		var nameob=document.getElementById("uname");
+		var nameob1=document.getElementById("uname1");
+		if(nameob.value.length<2){
+			nameob1.innerHTML="× 你输入的用户名不符合要求";
+			nameob1.style.color="red";
+			return false;
+		}else{
+			nameob1.innerHTML="√";
+			nameob1.style.color="green";
+			return true;
+		}
+	}
+	function pwds() {
+		var pwdob=document.getElementById("pwd");
+		var pwdob1=document.getElementById("pwd1");
+		var reg=/^\w{2,6}$/;
+		if(!reg.test(pwdob.value)){
+			pwdob1.innerHTML="× 你输入的密码不正确";
+			pwdob1.style.color="red";
+			return false;
+		}else{
+			pwdob1.innerHTML="√";
+			pwdob1.style.color="green";
+			return true;
+		}
+	}
+	function trues(){
+		var n=names();
+		var p=pwds();
+		if(n&&p){
+			return true;
+		}else{
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<form method="get" action="StudentServlet" onsubmit="return trues()">
+		<!-- 给当前作一个标记 -->
+		<input type="hidden" name="action" value="register"/>
+		<table>
+			<tr>
+				<td></td>
+				<td><h1>注册信息</h1></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" id="uname" name="uname"  onblur="names()"/></td>
+				<td id="uname1"></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" id="pwd" name="pwd" onblur="pwds()"/></td>
+				<td id="pwd1"></td>
+			</tr>
+			<tr>
+				<td>性别：</td>
+				<td>
+					<input type="radio" name="sex" value="man" checked="checked" />男
+					<input type="radio" name="sex" value="woman"  />女
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>爱好：</td>
+				<td>
+					<input type="checkbox" name="hobby" value="sleep" />sleep
+					<input type="checkbox" name="hobby" value="eat" />eat
+					<input type="checkbox" name="hobby" value="game" />game
+					<input type="checkbox" name="hobby" value="drink" />drink
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>出生省份：</td>
+				<td>
+					<select name="city">
+						<option value="hubei">湖北</option>
+						<option value="hunan">湖南</option>
+						<option value="guangxi">广西</option>
+						<option value="guangdong">广东</option>
+						<option value="jiangxi">江西</option>
+					</select>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" value="注册" />
+					<input type="reset" value="重置" />
+				</td>
+				<td></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
