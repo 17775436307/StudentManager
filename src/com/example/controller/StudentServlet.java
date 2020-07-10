@@ -1,8 +1,6 @@
 package com.example.controller;
-
 import com.example.bean.Student;
 import com.example.service.StudentService;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +25,6 @@ public class StudentServlet extends HttpServlet {
      */
     public StudentServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -148,7 +145,4 @@ public class StudentServlet extends HttpServlet {
 			response.setHeader("refresh", "3;url=login.jsp");
 		}
 	}
-	
-	
-
 }

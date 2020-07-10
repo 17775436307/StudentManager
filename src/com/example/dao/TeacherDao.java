@@ -1,10 +1,8 @@
 package com.example.dao;
-
 import com.example.bean.Teacher;
 import com.example.db.DBCenter;
 import com.example.dto.UserDto;
 import com.example.vo.UserVo;
-
 /**
  * 老师的数据访问类
  */

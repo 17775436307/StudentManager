@@ -1,8 +1,6 @@
 package com.example.db;
-
 import com.example.bean.Student;
 import com.example.bean.Teacher;
-
 import java.util.ArrayList;
 
 /**
@@ -21,9 +19,9 @@ public class DBCenter {
 	
 	//初始化老师和学生对象
 	static {
-		Student stu1=new Student("小明", "123", "man", "", "nan");
-		Student stu2=new Student("小花", "123", "man", "", "hunan");
-		Student stu3=new Student("小白", "123", "man", "", "nan");
+		Student stu1=new Student("小明", "123", "man", "", "guangxi");
+		Student stu2=new Student("小花", "123", "woman", "", "hunan");
+		Student stu3=new Student("小白", "123", "man", "", "hubei");
 		stulist.add(stu1);
 		stulist.add(stu2);
 		stulist.add(stu3);
